@@ -1,8 +1,15 @@
+import Home from './pages/Home';
+import {List} from "./components/export";
+import { Routes, Route } from 'react-router-dom';
+
 function App() {
   
   return (
     <div className="App">
-      홈
+      <List></List>
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+      </Routes>
     </div>
   );
 }
