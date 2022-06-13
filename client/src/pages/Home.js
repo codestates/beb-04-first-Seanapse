@@ -1,11 +1,11 @@
 import {NFT} from "../components/export";
-import styled from 'styled-components';
+//import styled from 'styled-components';
 
 function Home() {
 
-    styled.List(
+    // styled.List(
 
-    )
+    // )
 
     return (
       <div>
