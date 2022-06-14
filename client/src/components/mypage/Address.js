@@ -5,11 +5,11 @@ const Icon = styled.img`
     height:15px;
 `
 
-function Profile(props) {
+function Profile({account}) {
 
     return (
         <div>
-            <Icon src={'ethericon.png'}/><span className="account">{props.account}</span>
+            <Icon src={'ethericon.png'}/><span className="account">{account}</span>
         </div>
 
     )

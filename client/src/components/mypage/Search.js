@@ -11,9 +11,9 @@ const StyledInput = styled.input`
     padding-left:10px;
 `
 
-function Search(props) {
+function Search({keyword, changeHandler}) {
     return (
-        <StyledInput placeholder=' 🔍 Search by name' value={props.keyword} onChange={(e)=>props.changeHandler(e.target.value)}/>
+        <StyledInput placeholder=' 🔍 Search by name' value={keyword} onChange={(e)=>changeHandler(e.target.value)}/>
     )
 }
 

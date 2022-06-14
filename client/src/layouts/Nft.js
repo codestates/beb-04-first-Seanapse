@@ -29,10 +29,9 @@ const NftName = styled.p`
     text-align: left;
 `
 
-function NFT(props) {
+function NFT({el}) {
 
     const navigate = useNavigate();
-    const el = props.el;
 
     return (
         <StyledDiv key={el.index} onClick={() => navigate("/detail/" + el.tokenId)}>

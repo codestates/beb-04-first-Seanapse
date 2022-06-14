@@ -10,15 +10,15 @@ const StyledTop = styled.div`
     margin-top: 100px;
 `
 
-function Top(props) {
+function Top({account, keyword, changeHandler}) {
     return (
         <StyledTop>
             <div className="background"></div>
             <ProfileImage/>
             <Username>Unnamed</Username>
-            <Address account={props.account}/>
+            <Address account={account}/>
             <div>
-                <Search value={props.keyword} changeHandler={props.changeHandler}/>
+                <Search value={keyword} changeHandler={changeHandler}/>
             </div>
         </StyledTop>
     )

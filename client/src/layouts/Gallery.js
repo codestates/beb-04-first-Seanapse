@@ -7,11 +7,11 @@ const StyledDiv = styled.div`
     margin-top: 10px;
 `
 
-function Gallery(props) {
+function Gallery({nftlist, keyword}) {
     return (
         <StyledDiv>
-            {props.nftlist.map((el,index) => {
-                if(props.keyword !== '' && !el.name.includes(props.keyword)) {
+            {nftlist.map((el,index) => {
+                if(keyword !== '' && !el.name.includes(keyword)) {
                     return null;
                 }
                 return (
