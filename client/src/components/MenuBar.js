@@ -10,9 +10,10 @@ function MenuBar() {
 
         border: 0.5px solid gray;
         margin: 0px;
+        padding : 10px;
 
         flex-grow: 1;
-    `
+    `   
 
     return (
       <Bar>

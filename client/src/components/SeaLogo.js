@@ -6,17 +6,30 @@ function Logo() {
 
     const Button = styled.button`
         display: flex;
-        align-items: center;
-        justify-content: center;
+        flex-grow: 1;
 
         background-color: transparent;
         border: 0px;
     `
+    const StyledLink = styled(Link)`
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+        font-weight: 900;
+        font-size: 3ch;
+        text-decoration: none;
+        color: inherit;
+    `
 
+    const Img = styled.img`
+        margin-right: 10px;
+        width: 40px;
+    `
     return (
       <div>
         <Button>          
-            <Link to='/'><img src={"https://static.opensea.io/Logos/opensea-pride.svg"}/>OpenSea</Link>
+            <StyledLink to='/'><Img src={"https://static.opensea.io/Logos/opensea-pride.svg"}/>OpenSea</StyledLink>
         </Button>    
       </div>
     );

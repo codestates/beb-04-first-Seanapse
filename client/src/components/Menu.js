@@ -1,4 +1,9 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
+import InputBox from "./InputBox";
+import Propile from "./Propile";
+import Wallet from "./Wallet";
+
 
 function Menu() {
 
@@ -6,22 +11,32 @@ function Menu() {
         display: flex;
         align-items: center;
         justify-content: flex-end;
+        flex-grow: 1;
     
     `
+    const StyledLink = styled(Link)`
+        text-decoration: none;
+        color: inherit;
+        border: 0px;
+        background-color: transparent;
 
-    const Button = styled.button`
-        border: 1px solid black;
+        margin-left: 20px;
+        margin-right: 20px;
+
+        font-weight: 400;
+        font-size: 1.8ch;
     `
 
     return (
-      <Div>
-        <input type='text'/>
-        <Button>Explore</Button>
-        <Button>Stats</Button>
-        <Button>Resources</Button>
-        <Button>Create</Button>
-        <Button>Propile</Button>
-        <Button>Wallet</Button>
+      <Div>        
+        <InputBox></InputBox>
+        <StyledLink to='/explore'>Explore</StyledLink>
+        <StyledLink to='/stats'>Stats</StyledLink>
+        <StyledLink to='/resources'>Resources</StyledLink>
+        <StyledLink to='/create'>Create</StyledLink>
+        <StyledLink to='/account'><Propile></Propile></StyledLink>        
+        {/* <StyledLink to='/login'><Propile></Propile></StyledLink>     */}
+        <Wallet/>
       </Div>
     );
   }
