@@ -33,7 +33,6 @@ function MyPage() {
 
     return (
         <div className="MyPage">
-            <header>헤더</header>
             <Top account={account} keyword={keyword} changeHandler={setKeyword}/>
             <Gallery nftlist={nftlist} keyword={keyword}/>
         </div>   
