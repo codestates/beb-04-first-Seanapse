@@ -36,7 +36,7 @@ function NFT({el}) {
     return (
         <StyledDiv key={el.index} onClick={() => navigate("/detail/" + el.tokenId)}>
             <NftImage src={el.image} alt=""/>
-            <NftCollectionName>{el.collection}</NftCollectionName>
+            <NftCollectionName>Seanapse Collection</NftCollectionName>
             <NftName>{el.name}</NftName>
         </StyledDiv>
     )
