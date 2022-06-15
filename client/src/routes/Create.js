@@ -6,12 +6,7 @@ const Create = () => {
     name: '',
     description: "",
     image: "",
-    attributes: [
-      {
-        "trait_type": "",
-        "value": ""
-      }
-    ]
+    attributes: []
   });
 
   return (
