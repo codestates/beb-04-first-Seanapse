@@ -50,8 +50,10 @@ const CreateInputProperties = ({ title }) => {
   }
 
   const removePropertiesHandler = (e, index) => {
-    const removedProperties = properties.filter((property, propertyIndex) => index !== propertyIndex);
-    setProperties([...removedProperties]);
+    const removeProperties = properties.filter(
+      (item, itemIndex) => index !== itemIndex
+    )
+    setProperties(removeProperties);
   }
 
   return (
@@ -60,8 +62,8 @@ const CreateInputProperties = ({ title }) => {
       {properties.map((property, index) => {
         return (
           <PropertiesWrapper key={index}>
-            <CreateInputElement name={'trait_type'} placeholder={"Key.."} onChange={(e) => { propertiesHandler(e, index) }}></CreateInputElement>
-            <CreateInputElement name={'value'} placeholder={"Value.."} onChange={(e) => { propertiesHandler(e, index) }} ></CreateInputElement>
+            <CreateInputElement name={'trait_type'} placeholder={"Key.."} onChange={(e) => { propertiesHandler(e, index) }} value={property.trait_type}></CreateInputElement>
+            <CreateInputElement name={'value'} placeholder={"Value.."} onChange={(e) => { propertiesHandler(e, index) }} value={property.value} ></CreateInputElement>
             <PropertyButton onClick={(e) => { removePropertiesHandler(e, index) }}>-</PropertyButton>
           </PropertiesWrapper>
         );
