@@ -22,10 +22,10 @@ const Submit = styled.button`
   color: rgb(255, 255, 255);
 `
 
-const CreatSubmitButton = ({children}) => {
+const CreatSubmitButton = ({children, onClick=()=>{}}) => {
   return (
     <Wrapper>
-      <Submit>{children}</Submit>
+      <Submit onClick={onClick}>{children}</Submit>
     </Wrapper>
   );
 }
