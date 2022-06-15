@@ -16,10 +16,15 @@ const Input = styled.input`
   padding: 5px;
 `;
 
-const CreateInputElement = ({ name, placeholder = "", onChange = () => { } }) => {
+const CreateInputElement = ({ name, placeholder = "", onChange = () => { }, value=undefined }) => {
   return (
     <InputWrapper>
+    {
+      value === undefined ?
       <Input name={name} placeholder={placeholder} onChange={onChange}></Input>
+      :
+      <Input name={name} placeholder={placeholder} onChange={onChange} value={value}></Input>
+    }
     </InputWrapper>
   );
 }
