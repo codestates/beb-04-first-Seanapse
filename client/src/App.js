@@ -3,14 +3,17 @@ import MyPage from './routes/MyPage';
 import Home from './routes/Home';
 import { Menubar } from './components/export';
 import Create from './routes/Create';
+import { useState } from 'react';
 
 function App() {
   
+  const [searchKeyword, setSearchKeyword]= useState('');
+
   return (
     <div className="App">
-      <Menubar></Menubar>
+      <Menubar setSearchKeyword={setSearchKeyword}/>
       <Routes>
-        <Route path='/' element={<Home></Home>}></Route>
+        <Route path='/' element={<Home searchKeyword={searchKeyword}></Home>}></Route>
         <Route path='/detail' element={<div>Detail</div>}></Route>
         <Route path='/create' element={<Create></Create>}></Route>
         <Route path='/mypage' element={<MyPage></MyPage>}></Route>

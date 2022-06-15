@@ -2,7 +2,7 @@ import Logo from './SeaLogo';
 import Menu from './Menu';
 import styled from 'styled-components';
 
-function MenuBar() {
+function MenuBar( {setSearchKeyword} ) {
     
     const Bar = styled.div`
         display: flex;
@@ -17,8 +17,8 @@ function MenuBar() {
 
     return (
       <Bar>
-        <Logo></Logo>
-        <Menu></Menu>
+        <Logo setSearchKeyword={setSearchKeyword}></Logo>
+        <Menu setSearchKeyword={setSearchKeyword}></Menu>
       </Bar>
     );
   }

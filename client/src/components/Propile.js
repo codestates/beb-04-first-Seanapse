@@ -3,21 +3,26 @@ import styled from "styled-components";
 function Propile() {
 
     const Div = styled.div`
-        background-color: purple;
+        background-color: transparent;
 
         border: 1.5px solid #E2E2E2;
         border-radius: 50px;
 
-        min-width: 25px;
-        min-height: 25px;
+        width: 25px;
+        height: 25px;
         margin-left: 15px;
         margin-right: 15px;
     `
+    const Img = styled.img`
+      width: 25px;
+      height: 25px;
+      margin-left: 15px;
+      margin-right: 15px;
+      margin-top: 5px;
+    `
 
     return (
-      <Div>
-          {/* <img src=""></img> */}
-      </Div>
+      <Img src="userprofile.png"></Img>
     );
   }
   export default Propile;

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styled from 'styled-components';
     
 
-function Logo() {
+function Logo({setSearchKeyword}) {
 
     const Button = styled.button`
         display: flex;
@@ -26,9 +26,15 @@ function Logo() {
         margin-right: 10px;
         width: 40px;
     `
+
+    const keywordInitialization = () =>{
+      console.log('keywordInitialization')
+      setSearchKeyword('');
+    }
+
     return (
       <div>
-        <Button>          
+        <Button onClick={keywordInitialization}>          
             <StyledLink to='/'><Img src={"https://static.opensea.io/Logos/opensea-pride.svg"}/>OpenSea</StyledLink>
         </Button>    
       </div>

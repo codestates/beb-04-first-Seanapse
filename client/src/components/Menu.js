@@ -5,7 +5,7 @@ import Propile from "./Propile";
 import Wallet from "./Wallet";
 
 
-function Menu() {
+function Menu({setSearchKeyword}) {
 
     const Div = styled.div`
         display: flex;
@@ -29,12 +29,12 @@ function Menu() {
 
     return (
       <Div>        
-        <InputBox></InputBox>
+        <InputBox setSearchKeyword={setSearchKeyword}></InputBox>
         <StyledLink to='/explore'>Explore</StyledLink>
         <StyledLink to='/stats'>Stats</StyledLink>
         <StyledLink to='/resources'>Resources</StyledLink>
         <StyledLink to='/create'>Create</StyledLink>
-        <StyledLink to='/account'><Propile></Propile></StyledLink>        
+        <StyledLink to='/mypage'><Propile></Propile></StyledLink>        
         {/* <StyledLink to='/login'><Propile></Propile></StyledLink>     */}
         <Wallet/>
       </Div>
