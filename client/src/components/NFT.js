@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import nftlist from '../dummy/mypagelist'
+// import nftlist from '../utils/mypagelist'
 import Gallery from '../layouts/Gallery'
 
 const Div = styled.div`
@@ -20,7 +20,7 @@ display:flex;
 padding-left: 70px;
 `
 
-function NFT({searchKeyword}) {
+function NFT({searchKeyword, nftlist}) {
   return (
     <Div>
       <Title>{nftlist.length} items Searched!</Title>
