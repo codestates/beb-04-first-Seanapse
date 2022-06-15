@@ -7,11 +7,13 @@ import { useState } from 'react';
 
 function App() {
   
+  const [nftList, setNftList] = useState([])
+  const [address, setAddress] = useState('')
   const [searchKeyword, setSearchKeyword]= useState('');
 
   return (
     <div className="App">
-      <Menubar setSearchKeyword={setSearchKeyword}/>
+      <Menubar setSearchKeyword={setSearchKeyword} address={address} setAddress={setAddress}/>
       <Routes>
         <Route path='/' element={<Home searchKeyword={searchKeyword}></Home>}></Route>
         <Route path='/detail' element={<div>Detail</div>}></Route>
