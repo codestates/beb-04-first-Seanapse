@@ -2,14 +2,13 @@ import { CreateTitle, CreateWrapper, CreatSubmitButton } from '../../components/
 import CreateInput from './createInput';
 import CreateInputProperties from './createInputProperties';
 import CreateUpload from './createUpload';
-
-import Axios from 'axios';
-import FormData from 'form-data';
+import {ipfsImageUpload, ipfsMetadataUpload} from '../../utils/pinata';
+import {createNFT} from '../../utils/wallet';
 import { useState } from 'react';
-
-import {ethers} from 'ethers';
+import {useNavigate} from 'react-router-dom';
 
 const CreateLayout = ({metadata, setMetadata, seanapseNFT, setIsLoading}) => {
+  const navigate = useNavigate();
   const [file, setFile] = useState(undefined);
 
   const inputOnChaneHandler = (e) => {
@@ -19,71 +18,31 @@ const CreateLayout = ({metadata, setMetadata, seanapseNFT, setIsLoading}) => {
     })
   }
 
-  const imageUpload = async() => {
-    const data = new FormData();
-    data.append('file', file);
-    data.append('pinataOptions', '{"cidVersion": 1}');
-    data.append('pinataMetadata', `{"name": "${metadata.name}-picture", "keyvalues": {"company": "Pinata"}}`);
-
-    let config = {
-      method: 'post',
-      url: 'https://api.pinata.cloud/pinning/pinFileToIPFS',
-      headers: {
-        'Authorization': `Bearer ${process.env.REACT_APP_PINATA_JWT}`,
-      },
-      data: data
-    }
-    try{
-      const uploadFileResponse = await Axios(config);
-      setMetadata((state) => ({
-        ...state,
-        image: uploadFileResponse.data.IpfsHash
-      }))
-      return uploadFileResponse;
-    } catch(err) {
-      console.error(err);
-    }
-  }
-
-  const metadataUpload = async() => {
-    const data = new FormData();
-    const metadataFile = new File([new Blob([JSON.stringify(metadata)])], `${metadata.name}-metadata.json`)
-    data.append('file', metadataFile);
-    data.append('pinataOptions', '{"cidVersion": 1}');
-    data.append('pinataMetadata', `{"name": "${metadata.name}-metadata", "keyvalues": {"company": "Pinata"}}`);
-
-    const config = {
-      method: 'post',
-      url: 'https://api.pinata.cloud/pinning/pinFileToIPFS',
-      headers: { 
-        'Authorization': `Bearer ${process.env.REACT_APP_PINATA_JWT}`
-      },
-      data : data
-    };
+  // const createNFT = async(address, tokenUrl) => {
+  //   const provider = new ethers.providers.Web3Provider(window.ethereum)
+  //   const contract = new ethers.Contract("0xe18585AE18ea624E361f71BE760DFA1050baaA99", seanapseNFT, provider);
     
-    const res =  await Axios(config);
-    return res.data.IpfsHash
-  }
-
-  const createNFT = async(address, tokenUrl) => {
-    const provider = new ethers.providers.Web3Provider(window.ethereum)
-    const contract = new ethers.Contract("0xe18585AE18ea624E361f71BE760DFA1050baaA99", seanapseNFT, provider);
-    
-    try{
-      await contract.mintNFT(address, tokenUrl);
-    } catch(err) {
-      console.error(err);
-    }
-  }
+  //   try{
+  //     await contract.mintNFT(address, tokenUrl);
+  //   } catch(err) {
+  //     console.error(err);
+  //   }
+  // }
 
   const submitHandler = async() => {
     setIsLoading(true);
     try {
       if(!window.ethereum.selectedAddress) throw new Error();
-      await imageUpload();
-      const toeknUrl = await metadataUpload();
-      await createNFT(window.ethereum.selectedAddress, toeknUrl);
+      const imageIpfsUri = await ipfsImageUpload(file, metadata);
+      const finalMetadata = {
+        ...metadata,
+        image: imageIpfsUri
+      }
+      setMetadata(finalMetadata);
+      const metadataIpfsUri = await ipfsMetadataUpload(finalMetadata);
+      await createNFT(window.ethereum.selectedAddress, metadataIpfsUri);
       setIsLoading(false);
+      navigate("/");
     } catch(err) {
       setIsLoading(false);
       console.error(err);
