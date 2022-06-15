@@ -3,7 +3,7 @@ import { NFT } from "../components/export";
 
 function Home({searchKeyword} ) {
   return (
-    <NFT searchKeyword={searchKeyword} />
+    <NFT searchKeyword={searchKeyword} setNftList={setNftList} />
   );
 }
 
