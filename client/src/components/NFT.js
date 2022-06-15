@@ -1,52 +1,31 @@
 import styled from "styled-components";
+// import nftlist from '../utils/mypagelist'
+import Gallery from '../layouts/Gallery'
 
-function NFT() {
-  const Div = styled.div`
-    display: flex;
-    flex-direction: column;
+const Div = styled.div`
+display: flex;
+flex-direction: column;
 
-    margin-right: 20px;
-    margin-left: 20px;
-    margin-top: 30px;
-    padding: 20px;
+margin-right: 70px;
+margin-left: 70px;
+margin-top: 30px;
+padding: 20px;
 
-    border: 3px solid #e2e2e2;
-    border-radius: 12px;
-  `
-  const ItemList = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
+border: 3px solid #e2e2e2;
+border-radius: 12px;
+`
 
-    padding: 30px;
+const Title = styled.div`
+display:flex;
+padding-left: 70px;
+`
 
-    border: 3px solid #e2e2e2;
-    border-radius: 12px;
-  `
-
-  const Item = styled.div`
-    width: 200px;
-    height: 250px;
-
-    border: 3px solid #e2e2e2;
-    border-radius: 12px;
-  `
-    return (
-      <Div>
-        <div>41,999,999 items Searched!</div>
-        <ItemList>
-          <Item></Item>
-          <Item></Item>
-          <Item></Item>
-          <Item></Item>
-          <Item></Item>
-          <Item></Item>
-          <Item></Item>
-          <Item></Item>
-          <Item></Item>
-          <Item></Item>
-        </ItemList>
-      </Div>
-    );
-  }
-  export default NFT;
+function NFT({searchKeyword, nftList}) {
+  return (
+    <Div>
+      <Title>{nftList.length} items Searched!</Title>
+      <Gallery nftlist={nftList} keyword={searchKeyword}/>
+    </Div>
+  );
+}
+export default NFT;

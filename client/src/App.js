@@ -5,16 +5,22 @@ import { Menubar } from './components/export';
 import Create from './routes/Create';
 import Detail from './routes/Detail';
 
+import { useState } from 'react';
+
 function App() {
-  
+
+  const [nftList, setNftList] = useState([])
+  const [address, setAddress] = useState('')
+  const [searchKeyword, setSearchKeyword]= useState('');
+
   return (
     <div className="App">
-      <Menubar></Menubar>
+      <Menubar setSearchKeyword={setSearchKeyword} address={address} setAddress={setAddress}/>
       <Routes>
-        <Route path='/' element={<Home></Home>}></Route>
+        <Route path='/' element={<Home searchKeyword={searchKeyword} nftList={nftList} setNftList={setNftList} address={address} setAddress={setAddress}></Home>}></Route>
         <Route path='/detail' element={<Detail></Detail>}></Route>
         <Route path='/create' element={<Create></Create>}></Route>
-        <Route path='/mypage' element={<MyPage></MyPage>}></Route>
+        <Route path='/mypage' element={<MyPage nftList={nftList} address={address}></MyPage>}></Route>
       </Routes>
     </div>
   );

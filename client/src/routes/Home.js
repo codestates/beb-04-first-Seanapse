@@ -1,9 +1,9 @@
 import { NFT } from "../components/export";
 //import styled from 'styled-components';
 
-function Home() {
+function Home({searchKeyword, setNftList, nftList} ) {
   return (
-    <NFT />
+    <NFT searchKeyword={searchKeyword} nftList={nftList} setNftList={setNftList} />
   );
 }
 

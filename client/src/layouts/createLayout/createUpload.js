@@ -1,8 +1,9 @@
+import { CreateUploadWrapper, CreateUploadInputFile } from '../../components/create/upload';
 
-import {CreateUploadWrapper, CreateUploadInputFile} from '../../components/create/upload';
-const CreateUploadLayout = () => {
-  const uploadHandler = () => {
 
+const CreateUploadLayout = ({ setFile }) => {
+  const uploadHandler = async (event) => {
+    setFile(event.target.files[0]);
   }
 
   return (
