@@ -22,10 +22,10 @@ const Submit = styled.button`
   color: rgb(255, 255, 255);
 `
 
-const CreatSubmitButton = () => {
+const CreatSubmitButton = ({children}) => {
   return (
     <Wrapper>
-      <Submit>Create</Submit>
+      <Submit>{children}</Submit>
     </Wrapper>
   );
 }

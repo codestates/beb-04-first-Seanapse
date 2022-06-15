@@ -36,7 +36,7 @@ const CreateLayout = ({metadata, setMetadata}) => {
         onChange={inputOnChaneHandler}
       /> 
       <CreateInputProperties title="Properties"></CreateInputProperties>
-      <CreatSubmitButton></CreatSubmitButton>
+      <CreatSubmitButton>Create</CreatSubmitButton>
     </CreateWrapper>
   );
 }
