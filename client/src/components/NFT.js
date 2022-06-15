@@ -20,11 +20,11 @@ display:flex;
 padding-left: 70px;
 `
 
-function NFT({searchKeyword, nftlist}) {
+function NFT({searchKeyword, nftList}) {
   return (
     <Div>
-      <Title>{nftlist.length} items Searched!</Title>
-      <Gallery nftlist={nftlist} keyword={searchKeyword}/>
+      <Title>{nftList.length} items Searched!</Title>
+      <Gallery nftlist={nftList} keyword={searchKeyword}/>
     </Div>
   );
 }

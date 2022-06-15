@@ -51,7 +51,7 @@ const createNFT = async (recipient, tokenURI) => {
     try{
         const provider = await new ethers.providers.Web3Provider(window.ethereum);     
         const signer = await provider.getSigner();
-        let contract = await new ethers.Contract(SEANAPSE_NFT_CONTRACT_ADDRESS, SeanapseNFTAbi, signer, provider);
+        let contract = await new ethers.Contract(SEANAPSE_NFT_CONTRACT_ADDRESS, seanpaseNtfAbi, signer, provider);
         // let sContract = await contract.connect(signer);
         return contract.mintNFT(recipient, tokenURI);
     }
