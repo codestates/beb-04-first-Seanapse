@@ -10,9 +10,6 @@ function App() {
 
   const [nftList, setNftList] = useState([])
   const [address, setAddress] = useState('')
-  
-  const [nftList, setNftList] = useState([])
-  const [address, setAddress] = useState('')
   const [searchKeyword, setSearchKeyword]= useState('');
 
   return (
