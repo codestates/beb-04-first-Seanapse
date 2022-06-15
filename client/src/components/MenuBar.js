@@ -7,6 +7,8 @@ function MenuBar( {setSearchKeyword} ) {
     const Bar = styled.div`
         display: flex;
         flex-direction: row;
+        
+        width: 100%;
 
         border: 0.5px solid gray;
         margin: 0px;

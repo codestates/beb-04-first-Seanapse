@@ -15,6 +15,9 @@ const UploadImage = styled.div`
   background-size: contain;
   background-repeat: no-repeat;
 
+  border-radius: 10px;
+  overflow: hidden;
+
   > button {
     display: none;
   }
@@ -33,8 +36,12 @@ const LoadButton = styled.button`
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(200, 200, 200, 0.5);
-  color: rgba(0, 0, 0, 0.5);
+  background-image: url('/add-image.png');
+  background-size: 20%;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  opacity: 0.5;
 `
 
 const fileToDataURL = (file) => new Promise((resolve, reject) => {
@@ -72,7 +79,7 @@ const CreateUploadInputFile = ({ onChange = (e) => { } }) => {
   return (
     <>
       <UploadImage imageUrl={dataURL} >
-        <LoadButton onClick={() => { uploadRef.current.click() }}>이미지 불러오기</LoadButton>
+        <LoadButton onClick={() => { uploadRef.current.click() }}></LoadButton>
       </UploadImage>
       <UploadInput ref={uploadRef} type={'file'} accept="image/*,video/*,audio/*,.glb,.gltf" onChange={uploadHandler}></UploadInput>
     </>
