@@ -15,9 +15,9 @@ const Create = () => {
   });
 
   return (
-    <div>
+    <>
       <CreateLayout metadata={metadata} setMetadata={setMetadata}></CreateLayout>
-    </div>
+    </>
   );
 }
 
