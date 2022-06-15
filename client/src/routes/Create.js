@@ -1,7 +1,10 @@
 import CreateLayout from '../layouts/createLayout';
 import { useState } from 'react';
+import seanapseNFT from '../utils/SeanapseNFT.json';
+import CreateLoading from '../components/create/loading';
 
 const Create = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const [metadata, setMetadata] = useState({
     name: '',
     description: "",
@@ -11,7 +14,8 @@ const Create = () => {
 
   return (
     <>
-      <CreateLayout metadata={metadata} setMetadata={setMetadata}></CreateLayout>
+      {isLoading ? <CreateLoading></CreateLoading> : undefined}
+      <CreateLayout setIsLoading={setIsLoading} seanapseNFT={seanapseNFT} metadata={metadata} setMetadata={setMetadata}></CreateLayout>
     </>
   );
 }
