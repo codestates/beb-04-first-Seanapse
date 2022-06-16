@@ -37,6 +37,7 @@ const connectWallet = async () => {
     if(window.ethereum){
         try{
           const accounts = await window.ethereum.request({ method: 'eth_requestAccounts'})
+          alert('지갑 연결 성공!');
           return accounts[0];
         }catch(err){
           alert(err.code);

@@ -24,22 +24,16 @@ function Wallet({address, setAddress}) {
     })
   }
 
-  const create = async() =>{
-    const a = await createNFT(address, "ipfs://QmXu8xCjS1rd3qEpxZnNFwmc1QZfsRjdqCMMneaExM9CZW");
-    console.log(a);
-  }
+  // const create = async() =>{
+  //   const a = await createNFT(address, "ipfs://QmXu8xCjS1rd3qEpxZnNFwmc1QZfsRjdqCMMneaExM9CZW");
+  //   console.log(a);
+  // }
 
   
   return (
-    <div>
-<Button onClick={walletconnect}>
+    <Button onClick={walletconnect}>
         <img src={'wallet.png'}></img>
-    </Button>  
-    <button onClick={create}>
-      create
-    </button>
-    </div>
-        
+    </Button>         
   );
 }
 export default Wallet;

@@ -25,10 +25,10 @@ margin-right: 10px;
 width: 40px;
 `
 
-function Logo({setSearchKeyword}) {
+function Logo({setSearchKeyword, setNftList}) {
 
   const keywordInitialization = () =>{
-    console.log('keywordInitialization')
+    setNftList([]);
     setSearchKeyword('');
   }
 
