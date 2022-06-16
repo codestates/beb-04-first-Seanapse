@@ -47,9 +47,9 @@ function NFT({searchKeyword, nftList, setNftList}) {
     setNftList(()=>[...nftList]);
   }
 
-    useEffect(() => {      
-      setLoading(false);
-      // setNftList(()=>[]);
+    useEffect(() => {
+      setLoading(false)
+      setNftList(() => [])
       requestNftList()
       .then(()=>{      
         setLoading(true)
