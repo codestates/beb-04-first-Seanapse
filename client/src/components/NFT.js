@@ -49,13 +49,13 @@ function NFT({searchKeyword, nftList, setNftList}) {
 
     useEffect(() => {      
       setLoading(false);
-      // setNftList(()=>[]);
+      setNftList(()=>[]);
       requestNftList()
       .then(()=>{      
         setLoading(true)
       })   
   }, [])
-
+   //tets
   return (
     <Div>
       <Title>{nftList.length === 0 ? 0 : nftList.length+1} items Searched!</Title>
