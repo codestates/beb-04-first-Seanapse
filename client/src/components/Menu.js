@@ -32,8 +32,7 @@ function Menu({setSearchKeyword ,address, setAddress}) {
       <StyledLink to='/stats'>Stats</StyledLink>
       <StyledLink to='/resources'>Resources</StyledLink>
       <StyledLink to='/create'>Create</StyledLink>
-      <StyledLink to='/mypage'><Propile></Propile></StyledLink>        
-      {/* <StyledLink to='/login'><Propile></Propile></StyledLink>     */}
+      <StyledLink to='/mypage'><Propile address={address}></Propile></StyledLink>        
       <Wallet address={address} setAddress={setAddress}/>
     </Div>
   );

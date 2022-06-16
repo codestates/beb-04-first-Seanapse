@@ -29,7 +29,9 @@ async function getNftList() {
             let image = out.image
             nftList.push({name, image, tokenId, owner, out})
         })
-        if(tokenId === arr.length) return nftList
+        if(tokenId === arr.length) {
+            return nftList
+        }
     }
 }
 
@@ -37,6 +39,7 @@ const connectWallet = async () => {
     if(window.ethereum){
         try{
           const accounts = await window.ethereum.request({ method: 'eth_requestAccounts'})
+          alert('지갑 연결 성공!');
           return accounts[0];
         }catch(err){
           alert(err.code);
