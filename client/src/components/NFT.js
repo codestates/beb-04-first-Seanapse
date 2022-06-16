@@ -12,9 +12,10 @@ const Div = styled.div`
   margin-right: 70px;
   margin-left: 70px;
   margin-top: 30px;
+  margin-bottom: 10px;
   padding: 20px;
 
-  border: 3px solid #e2e2e2;
+  /* border: 3px solid #e2e2e2; */
   border-radius: 12px;
 `
 
@@ -33,9 +34,9 @@ const Loding = styled.img`
 const NftDiv = styled.div`
   display: flex;
   flex-grow: 1;
-  width: 200px;
+  width: 100%;
   height: 200px;
-  align-self: center;
+  justify-content: center;
 `
 
 function NFT({searchKeyword, nftList, setNftList}) {
@@ -47,6 +48,7 @@ function NFT({searchKeyword, nftList, setNftList}) {
     setNftList(()=>[...nftList]);
   }
 
+
     useEffect(() => {
       setLoading(false)
       setNftList(() => [])
@@ -55,7 +57,7 @@ function NFT({searchKeyword, nftList, setNftList}) {
         setLoading(true)
       })   
   }, [])
-
+   //tets
   return (
     <Div>
       <Title>{nftList.length === 0 ? 0 : nftList.length+1} items Searched!</Title>
