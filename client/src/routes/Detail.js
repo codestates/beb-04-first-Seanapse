@@ -23,10 +23,11 @@ function DetailPage() {
         name: "",
         image: "",
         description: "",
-        attributes: "",
+        attributes: [],
         contract: "",
         standard: "",
-        network: ""
+        network: "",
+        tokenId: ""
     });
     useEffect(() => {
         setIsLoading(true);
