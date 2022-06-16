@@ -23,10 +23,10 @@ function InputBox({setSearchKeyword}) {
       setSearchKeyword(e.target.value);      
     }
   }
-  
+
   return (
     <Div>
-      <i class="fa-solid fa-magnifying-glass"></i>
+      <i className="fa-solid fa-magnifying-glass"></i>
       <Input type='text' placeholder="Search items, sollections, and accounts" onKeyUp={search}/>
     </Div>
   );

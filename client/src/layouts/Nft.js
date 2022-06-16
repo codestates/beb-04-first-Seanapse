@@ -32,10 +32,10 @@ const NftName = styled.p`
 function NFT({el}) {
 
     const navigate = useNavigate();
-
+    const imagePath = "https://ipfs.io/ipfs/" + (el.image).substr(7)
     return (
         <StyledDiv key={el.index} onClick={() => navigate("/detail/" + el.tokenId)}>
-            <NftImage src={el.image} alt=""/>
+            <NftImage src={imagePath} alt=""/>
             <NftCollectionName>Seanapse Collection</NftCollectionName>
             <NftName>{el.name}</NftName>
         </StyledDiv>

@@ -14,7 +14,7 @@ function Gallery({nftlist, keyword, address}) {
                 if(keyword !== '' && !el.name.includes(keyword) ) {
                     return null;
                 }
-                if(address !== '' && el.owner !== address) {
+                if(address !== '' && (el.owner).toLowerCase() !== address) {
                     return null;
                 }
                 return (

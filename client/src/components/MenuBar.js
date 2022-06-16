@@ -15,11 +15,11 @@ padding : 10px;
 flex-grow: 1;
 `   
 
-function MenuBar( {setSearchKeyword ,address, setAddress} ) {
+function MenuBar( {setSearchKeyword ,address, setAddress, setNftList} ) {
 
   return (
     <Bar>
-      <Logo setSearchKeyword={setSearchKeyword}></Logo>
+      <Logo setSearchKeyword={setSearchKeyword} setNftList={setNftList}></Logo>
       <Menu setSearchKeyword={setSearchKeyword} address={address} setAddress={setAddress}></Menu>
     </Bar>
   );
