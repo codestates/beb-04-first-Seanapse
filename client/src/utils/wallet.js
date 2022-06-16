@@ -1,12 +1,12 @@
 import { ethers } from 'ethers';
 
-import seanpaseNftAbi from './SeanapseNFT.json'
+import seanapseNftAbi from './SeanapseNFT.json'
 
 const SEANAPSE_NFT_CONTRACT_ADDRESS = '0xe18585AE18ea624E361f71BE760DFA1050baaA99'
 
 async function getNftList() {
     const provider = new ethers.providers.Web3Provider(window.ethereum); 
-    let contract = new ethers.Contract(SEANAPSE_NFT_CONTRACT_ADDRESS, seanpaseNftAbi, provider);
+    let contract = new ethers.Contract(SEANAPSE_NFT_CONTRACT_ADDRESS, seanapseNftAbi, provider);
     let totalSupply = await contract.totalSupply()
 
     if(totalSupply === 0) {
@@ -51,7 +51,7 @@ const createNFT = async (recipient, tokenURI) => {
     try{
         const provider = await new ethers.providers.Web3Provider(window.ethereum);     
         const signer = await provider.getSigner();
-        let contract = await new ethers.Contract(SEANAPSE_NFT_CONTRACT_ADDRESS, seanpaseNftAbi, signer, provider);
+        let contract = await new ethers.Contract(SEANAPSE_NFT_CONTRACT_ADDRESS, seanapseNftAbi, signer, provider);
         // let sContract = await contract.connect(signer);
         return contract.mintNFT(recipient, tokenURI);
     }
