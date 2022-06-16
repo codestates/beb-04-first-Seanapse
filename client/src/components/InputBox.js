@@ -19,7 +19,7 @@ min-width: 400px;
 
 function InputBox({setSearchKeyword}) {
   const search = (e) =>{
-    if(window.event.keyCode == 13){      
+    if(window.event.keyCode === 13){      
       setSearchKeyword(e.target.value);      
     }
   }

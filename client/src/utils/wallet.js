@@ -29,7 +29,9 @@ async function getNftList() {
             let image = out.image
             nftList.push({name, image, tokenId, owner, out})
         })
-        if(tokenId === arr.length) return nftList
+        if(tokenId === arr.length) {
+            return nftList
+        }
     }
 }
 

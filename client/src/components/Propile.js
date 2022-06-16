@@ -33,7 +33,7 @@ const Nomal = styled.div`
 function Propile({address}) {
   return (
     <div>
-      {address !== '' ? <Img src="userprofile.png"></Img> : <Nomal/> }
+      {address !== '' ? <Img src="/userprofile.png"></Img> : <Nomal/> }
     </div>    
   );
 }

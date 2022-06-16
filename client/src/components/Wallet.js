@@ -32,7 +32,7 @@ function Wallet({address, setAddress}) {
   
   return (
     <Button onClick={walletconnect}>
-        <img src={'wallet.png'}></img>
+        <img src={'/wallet.png'}></img>
     </Button>         
   );
 }
