@@ -35,6 +35,30 @@ async function getNftList() {
     }
 }
 
+async function getNft(tokenId) {
+    const provider = new ethers.providers.Web3Provider(window.ethereum); 
+    let contract = new ethers.Contract(SEANAPSE_NFT_CONTRACT_ADDRESS, seanapseNftAbi, provider);
+    let owner = await contract.ownerOf(tokenId)
+    let tokenURI =  await contract.tokenURI(tokenId)
+    let network = await provider.getNetwork(1);
+    return fetch("https://ipfs.io/ipfs/" + tokenURI.substr(7))
+    .then(res=> res.json())
+    .then(out => {
+        const imagePath = "https://ipfs.io/ipfs/" + (out.image).substr(7)
+        const nftInfo = {
+            "owner": owner
+            , "name": out.name
+            , "image": imagePath
+            , "description": out.description
+            , "attributes": out.attributes
+            , "contract":  SEANAPSE_NFT_CONTRACT_ADDRESS
+            , "standard": "ERC-721"
+            , "network": network.name
+        }
+        return nftInfo
+    })
+}
+
 const connectWallet = async () => {
     if(window.ethereum){
         try{
@@ -66,4 +90,4 @@ const createNFT = async (recipient, tokenURI) => {
 
 
 
-export {getNftList, connectWallet, createNFT};
+export {getNftList, connectWallet, createNFT, getNft};
