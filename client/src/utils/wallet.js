@@ -54,6 +54,7 @@ async function getNft(tokenId) {
             , "contract":  SEANAPSE_NFT_CONTRACT_ADDRESS
             , "standard": "ERC-721"
             , "network": network.name
+            , "tokenId": tokenId
         }
         return nftInfo
     })

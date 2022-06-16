@@ -4,6 +4,7 @@ import NftImg from "./nftimg";
 import Properties from "./properties";
 import DetailTemplate from "./detailtemplate";
 import DetailHead from './header';
+import DetailWrapper from './detailWapper';
 
 export {
     Description,
@@ -11,5 +12,6 @@ export {
     NftImg,
     Properties,
     DetailTemplate,
-    DetailHead
+    DetailHead,
+    DetailWrapper
 }

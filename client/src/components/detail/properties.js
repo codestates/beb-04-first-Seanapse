@@ -28,7 +28,7 @@ const Wrapper = styled.div`
     padding: 5px;
     overflow-x: hidden;
     overflow-y: scroll;
-    width: 600px;
+    /* width: 600px; */
 `;
 
 const TraitWrapper = styled.div`
@@ -60,8 +60,7 @@ margin: 5px;
   
 `;
 
-function Properties() {
-    const properties = dummyData;
+function Properties({properties=[]}) {
     return (
         <Wrapper>
             {properties.map((property, index) => (
