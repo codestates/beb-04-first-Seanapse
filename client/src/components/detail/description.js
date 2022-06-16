@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-    
+    font-weight: 500;
+    font-size: 1.5ch;
 `;
 
 function Description({width="10px"}){
