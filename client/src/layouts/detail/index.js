@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Description, Detail, DetailTemplate, NftImg, Properties } from '../../components/detail';
+import { Description, Detail, DetailTemplate, NftImg, Properties, DetailHead } from '../../components/detail';
 
 const Wrapper = styled.div`
     position: relative;
@@ -39,13 +39,15 @@ const Wrapper = styled.div`
 `;
 
 function DetailLayout() {
+    const owner = "0x0E7149cAB20d016291E8bc6F72580FE04CAE629e"
+
     return (
         <Wrapper>
             <NftImg />
             <DetailTemplate>
                 <Detail />
             </DetailTemplate>
-            <div>Header</div>
+            <DetailHead name={'test'} owner={owner} />
             <Description />
             <Properties />
         </Wrapper>
