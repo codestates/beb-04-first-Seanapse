@@ -38,16 +38,14 @@ const Wrapper = styled.div`
     }
 `;
 
-function DetailLayout() {
-    const owner = "0x0E7149cAB20d016291E8bc6F72580FE04CAE629e"
-
+function DetailLayout({nftInfo}) {
     return (
         <Wrapper>
-            <NftImg />
+            <NftImg imageUrl={nftInfo.image} />
             <DetailTemplate>
                 <Detail />
             </DetailTemplate>
-            <DetailHead name={'test'} owner={owner} />
+            <DetailHead name={nftInfo.name} owner={nftInfo.owner} />
             <Description />
             <Properties />
         </Wrapper>
