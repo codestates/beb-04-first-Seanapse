@@ -21,7 +21,7 @@ margin-top: 5px;
 
 function Propile() {
   return (
-    <Img src="userprofile.png"></Img>
+    <Img src="/userprofile.png"></Img>
   );
 }
 export default Propile;

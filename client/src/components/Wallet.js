@@ -33,7 +33,7 @@ function Wallet({address, setAddress}) {
   return (
     <div>
 <Button onClick={walletconnect}>
-        <img src={'wallet.png'}></img>
+        <img src={'/wallet.png'}></img>
     </Button>  
     <button onClick={create}>
       create
