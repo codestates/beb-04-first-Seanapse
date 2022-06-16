@@ -4,7 +4,7 @@ import Home from './routes/Home';
 import { Menubar } from './components/export';
 import Create from './routes/Create';
 import { useState } from 'react';
-import Detail from './layouts/detail';
+import Detail from './routes/Detail';
 
 
 function App() {
