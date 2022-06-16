@@ -4,7 +4,8 @@ import { useNavigate } from 'react-router-dom'
 const StyledDiv = styled.div`
     border-radius:10px;
     border: solid 1.5px #EAECEF;  
-    max-width: 280px;
+    width: 300px;
+    height: 400px;
     padding: 10px;
     margin-top: 10px;
     margin-left: 20px;

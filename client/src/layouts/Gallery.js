@@ -2,6 +2,11 @@ import styled from 'styled-components'
 import Nft from './Nft'
 
 const StyledDiv = styled.div`
+    display: flex;
+    
+    flex-wrap: wrap;
+    align-self: stretch;
+    width: 100%;
     margin-right: 50px;
     margin-left: 50px;
     margin-top: 10px;
