@@ -11,11 +11,11 @@ const Nftimg = styled.img`
     height: 100%;
 `
 
-function NftImg() {
+function NftImg({imageUrl}) {
 
     return (
         <Wrapper>
-            <Nftimg src={'/ethericon.png'} alt='' />
+            <Nftimg src={imageUrl === "" ? '/ethericon.png' : imageUrl} alt='' />
         </Wrapper>
     )
 }
