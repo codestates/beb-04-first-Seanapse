@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import styled from "styled-components";
-// import nftlist from '../utils/mypagelist'
 import Gallery from '../layouts/Gallery'
 import { getNftList } from '../utils/wallet'
 const Div = styled.div`
@@ -39,38 +38,29 @@ const NftDiv = styled.div`
   align-self: center;
 `
 
-
 function NFT({searchKeyword, nftList, setNftList}) {
 
-  const [loding, setloding] = useState(true)
+  const [loading, setLoading] = useState(true);
 
   async function requestNftList() {
     let nftList = await getNftList()
-    console.log('nft:', nftList);
-    setNftList(nftList);
+    setNftList(()=>[...nftList]);
   }
 
-  useEffect(() => {
-    console.log('lo')
-    setNftList([]);
-    setloding(false);
-    requestNftList()
-    .then(()=>{
-      console.log('re')
-      console.log('nft:',nftList)
-      setloding(true);
-    })
+    useEffect(() => {      
+      setLoading(false);
+      // setNftList(()=>[]);
+      requestNftList()
+      .then(()=>{      
+        setLoading(true)
+      })   
   }, [])
-  
-  useEffect(() => {
-    console.log("NFT - 2차 - nftList", nftList)
-  }, [nftList])
 
   return (
     <Div>
       <Title>{nftList.length === 0 ? 0 : nftList.length+1} items Searched!</Title>
       <NftDiv>
-        {loding ? <Gallery address={''} nftlist={nftList} keyword={searchKeyword}/> : <Loding src="https://i.stack.imgur.com/kOnzy.gif"/>}
+        {loading ? <Gallery address={''} nftlist={nftList} keyword={searchKeyword}/> : <Loding src="https://i.stack.imgur.com/kOnzy.gif"/>}
       </NftDiv>
     </Div>
   );
