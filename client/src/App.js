@@ -4,7 +4,7 @@ import Home from './routes/Home';
 import { Menubar } from './components/export';
 import Create from './routes/Create';
 import { useState } from 'react';
-import Detail from './components/detail/details';
+import Detail from './layouts/detail';
 
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
       <Menubar setSearchKeyword={setSearchKeyword} address={address} setAddress={setAddress} setNftList={setNftList}/>
       <Routes>
         <Route path='/' element={<Home searchKeyword={searchKeyword} nftList={nftList} setNftList={setNftList} address={address} setAddress={setAddress}></Home>}></Route>
-        <Route path='/detail' element={<div>Detail</div>}></Route>
+        <Route path='/detail/:tokenId' element={<Detail></Detail>}></Route>
         <Route path='/create' element={<Create></Create>}></Route>
         <Route path='/mypage' element={<MyPage nftList={nftList} address={address}></MyPage>}></Route>
       </Routes>
