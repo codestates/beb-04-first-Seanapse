@@ -8,13 +8,17 @@ const StyledDiv = styled.div`
 `
 
 function Gallery({nftlist, keyword, address}) {
+
+    console.log(`Gallery: nftlist: ${nftlist}, keyword: ${nftlist}, address: ${address}`)
+
     return (
         <StyledDiv>
             {nftlist.map((el,index) => {
-                if(keyword !== '' && !el.name.includes(keyword) ) {
+                
+                if(keyword !== '' && !((el.name).toLowerCase()).includes(keyword.toLowerCase()) ) {
                     return null;
                 }
-                if(address !== '' && (el.owner).toLowerCase() !== address) {
+                if(address !== '' && (el.owner).toLowerCase() !== address.toLowerCase()) {
                     return null;
                 }
                 return (
